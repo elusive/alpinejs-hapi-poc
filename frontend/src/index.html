@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>My Reading List</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+        <script src="js/schema.js" type="text/javascript"></script>
+    </head>
+    <body class="m-3">
+        <header class="container bg-gray-100 p-2">
+            <h2 class="text-2xl text-blue-500 m-2"> Reading List: 2024 </h2>
+            <p class="text-base m-2"> This page displays my reading list for the upcoming 2024 year. Each row 
+            in the list contains details about the books, such as author, year published 
+            and where possible a cover image for the book </p>
+        </header>    
+        <section x-data="schema()">
+            <table class="p-2 m-2 text-sm text-center">
+                <thead>
+                    <th class="border text-blue-600 m-1 px-2 py-1 text-center"> Id </th>
+                    <th class="border text-blue-600 m-1 px-2 py-1 text-center"> Order </th>
+                    <th class="border text-blue-600 m-1 px-2 py-1 text-center"> Notes </th>
+                    <th class="border text-blue-600 m-1 px-2 py-1 text-center"> Personnel </th>
+                </thead>
+                <tbody >
+                    <template x-for="wo, i in workOrders">
+                        <tr :class="{'bg-blue-100': wo.id % 2 == 1}">
+                            <td class="border m-1 px-2 py-1" x-text="wo.id"></td> 
+                            <td class="border m-1 px-2 py-1" x-text="wo.orderNo"></td> 
+                            <td class="border m-1 px-2 py-1 break-normal text-left" x-text="wo.notes"></td> 
+                            <td class="border m-1 px-2 py-1 text-left" x-text="wo.personnel"></td> 
+                            <td class=""><!-- TODO add edit button --></td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+        </section>
+    </body>
+</html>
