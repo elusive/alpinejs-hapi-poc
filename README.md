@@ -5,6 +5,8 @@ as the stack for implementing the database api and its consumption for a project
 am working on.  The database will be an instance of PostgreSQL but that should not 
 matter. I will also be trying to use an ORM for the data access layer.
 
+![Data records screenshot](alpine-hapi-poc.png)
+
 ## Overview
 The proof of concept application is a simple web app using HTML, [Tailwind CSS][f3], and Javascript.
 Data-driven content is provided using [alpine] which is a super lightweight set of 
