@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="css/style.css" rel="stylesheet">
         <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-        <script src="js/schema.js" type="text/javascript"></script>
+        <script src="js/books.js"></script>
     </head>
     <body class="m-3">
         <header class="container bg-gray-100 p-2">
@@ -15,26 +15,27 @@
             in the list contains details about the books, such as author, year published 
             and where possible a cover image for the book </p>
         </header>    
-        <section x-data="schema()">
+        <section x-data="getBooks()">
             <table class="p-2 m-2 text-sm text-center">
                 <thead>
-                    <th class="border text-blue-600 m-1 px-2 py-1 text-center"> Id </th>
-                    <th class="border text-blue-600 m-1 px-2 py-1 text-center"> Order </th>
-                    <th class="border text-blue-600 m-1 px-2 py-1 text-center"> Notes </th>
-                    <th class="border text-blue-600 m-1 px-2 py-1 text-center"> Personnel </th>
+                    <th class="border text-blue-600 m-1 px-2 py-1 text-center"> Key </th>
+                    <th class="border text-blue-600 m-1 px-2 py-1 text-center"> Type </th>
+                    <th class="border text-blue-600 m-1 px-2 py-1 text-center"> Name </th>
+                    <th class="border text-blue-600 m-1 px-2 py-1 text-center"> Title </th>
                 </thead>
                 <tbody >
-                    <template x-for="wo, i in workOrders">
+                    <template x-for="(wo, i) in docs" :key="i">
                         <tr :class="{'bg-blue-100': wo.id % 2 == 1}">
-                            <td class="border m-1 px-2 py-1" x-text="wo.id"></td> 
-                            <td class="border m-1 px-2 py-1" x-text="wo.orderNo"></td> 
-                            <td class="border m-1 px-2 py-1 break-normal text-left" x-text="wo.notes"></td> 
-                            <td class="border m-1 px-2 py-1 text-left" x-text="wo.personnel"></td> 
+                            <td class="border m-1 px-2 py-1" x-text="wo.key"></td> 
+                            <td class="border m-1 px-2 py-1" x-text="wo.type"></td> 
+                            <td class="border m-1 px-2 py-1 break-normal text-left" x-text="wo.name"></td> 
+                            <td class="border m-1 px-2 py-1 text-left" x-text="wo.top_work"></td> 
                             <td class=""><!-- TODO add edit button --></td>
                         </tr>
                     </template>
                 </tbody>
             </table>
         </section>
+
     </body>
 </html>
