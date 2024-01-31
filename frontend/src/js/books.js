@@ -27,6 +27,7 @@ function getBooks() {
     numFound: 21,
     start: 0,
     numFoundExact: true,
+    add: () => { alert('add'); },
     docs: [
       {
         "key": "OL2728173A",

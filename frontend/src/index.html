@@ -30,9 +30,15 @@
                             <td class="border m-1 px-2 py-1" x-text="wo.type"></td> 
                             <td class="border m-1 px-2 py-1 break-normal text-left" x-text="wo.name"></td> 
                             <td class="border m-1 px-2 py-1 text-left" x-text="wo.top_work"></td> 
-                            <td class=""><!-- TODO add edit button --></td>
+                            <td class=""><button x-on:click="add()">Edit</button></td>
                         </tr>
                     </template>
+                    <tr><form>
+                        <td><input id="tag" /></td>
+                        <td><input id="type" /></td>
+                        <td><input id="name" /></td>
+                        <td><button /> </td>
+                    </form></tr>
                 </tbody>
             </table>
         </section>
